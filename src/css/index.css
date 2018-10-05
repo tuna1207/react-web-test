@@ -7,6 +7,40 @@ body {
   background: rgb(45, 152, 214)
 }
 
+/* HEADER LOGO */
+
+.logo-brand {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.logo-brand > span {
+  color: #ffffff;
+  display: block;
+  margin-left: 10px;
+}
+
+.logo-brand:hover {
+  text-decoration: none;
+}
+
+.avatar-image {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  margin: 0 15px;
+  background: #ffffff;
+}
+
 /* HEADER NAVBAR */
 
 .navbar {
@@ -119,23 +153,6 @@ table thead th , table tbody tr td {
   color: green
 }
 
-.content-title {
-  background-color: white;  
-  margin-top: 60px;
-  margin-bottom: 60px;
-  /* border: 1px solid black; */
-  /* border-style: outset;÷
-   */
-   border: 1px solid rgb(0,0,0);
-   /* border: 1px solid rgba(255,0,0,0.5); */
-   -webkit-background-clip: padding-box; /* for Safari */
-    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-}
-
-/* .content-title.outset {
-  border-style: outset;
-} */
-
 .wrapper-btn-add {
   display: flex;
   flex-direction: row;
@@ -198,4 +215,24 @@ table thead th , table tbody tr td {
   cursor: pointer;
   text-decoration: underline;
   color: #666666;
+}
+
+.content-title {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.content-title h6 {
+  font-size: 14px;
+  color: #999999;
+}
+
+.icon-toggle {
+  cursor: pointer;
+}
+
+.icon-sidebar {
+  color: #999999
 }

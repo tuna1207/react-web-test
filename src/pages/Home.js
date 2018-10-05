@@ -2,7 +2,7 @@ import { lifecycle, compose as recompose, withHandlers, withState } from 'recomp
 import { connect } from 'react-redux'
 import { EmployeeRedux } from '../redux/reducers'
 import React from 'react'
-import { Sidebar } from '../components'
+import { InputToggle, Sidebar } from '../components'
 import { Table } from 'reactstrap'
 
 const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, onSave, onChangeName, onChangeKey, isShowContent, onShowContent, textContent, onSetTextContent }) => (
@@ -18,7 +18,8 @@ const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, on
               ? (
                 <div>
                   <div className='content-title'>
-                    <h4>{`There API KeyId grant developers the ability to access electrica services in the Cloud. Keep Them ...`}</h4>
+                    <i className='fa fa-cog icon-sidebar fa-2x mr-2' />
+                    <h6 className='mb-0'>{`There API KeyId grant developers the ability to access electrica services in the Cloud. Keep Them ...`}</h6>
                   </div>
                   <div className='wrapper-table'>
                     <Table>
@@ -43,12 +44,7 @@ const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, on
                                 {
                                   empl.isNewAdd
                                     ? <input className='input-new-text' placeholder='Enter key' onChange={onChangeKey} />
-                                    : (
-                                      <div>
-                                        <input disabled className='input-key' type={isToggle ? 'text' : 'password'} value={empl.key} />
-                                        <span className='on-toggle' onClick={onToogleKey}>{`toggle`}</span>
-                                      </div>
-                                    )
+                                    : <InputToggle value={empl.key} />
                                 }
                               </td>
                               <td>{empl.dateCreated || '---'}</td>

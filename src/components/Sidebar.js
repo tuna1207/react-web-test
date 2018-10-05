@@ -7,9 +7,11 @@ const HeaderNavBar = ({ onShowContent, onSetTextContent }) => (
     <Navbar expand='md'>
       <Nav navbar>
         <NavItem>
+          <i className='fa fa-key icon-sidebar' />
           <button onClick={onShowContent} className='btn-sidebar'>{`Keys`}</button>
         </NavItem>
         <NavItem>
+          <i className='fa fa-file icon-sidebar' />
           <button onClick={onSetTextContent} className='btn-sidebar'>{`Log`}</button>
         </NavItem>
       </Nav>
