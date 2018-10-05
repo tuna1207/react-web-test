@@ -1,11 +1,12 @@
+import { InputToggle, Sidebar } from '../components'
 import { lifecycle, compose as recompose, withHandlers, withState } from 'recompose'
 import { connect } from 'react-redux'
+import { CSSTransitionGroup } from 'react-transition-group'
 import { EmployeeRedux } from '../redux/reducers'
 import React from 'react'
-import { InputToggle, Sidebar } from '../components'
 import { Table } from 'reactstrap'
 
-const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, onSave, onChangeName, onChangeKey, isShowContent, onShowContent, textContent, onSetTextContent }) => (
+const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, onSave, onChangeName, onChangeKey, isShowContent, onShowContent, textContent, onSetTextContent, isDisable }) => (
   <div className='home-page'>
     <div className='container-fuild'>
       <div className='row'>
@@ -31,7 +32,14 @@ const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, on
                           <th>{`Action`}</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <CSSTransitionGroup
+                        transitionAppear
+                        component='tbody'
+                        transitionAppearTimeout={500}
+                        transitionEnterTimeout={500}
+                        transitionLeaveTimeout={300}
+                        transitionName='fade'
+                      >
                         {
                           listEmployees.length > 0 && listEmployees.map((empl, idx) => (
                             <tr key={`key-${idx}`}>
@@ -55,7 +63,7 @@ const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, on
                                     : (
                                       <div className='options-active'>
                                         <button className='btn-refresh'>{`Refresh`}</button>
-                                        <button className='btn-delete' onClick={() => {onDeleteEmpl(idx)}}>{`Delete`}</button>
+                                        <button disabled={isDisable} className='btn-delete' onClick={() => {onDeleteEmpl(idx)}}>{`Delete`}</button>
                                       </div>
                                     )
                                 }
@@ -63,10 +71,10 @@ const Home = ({ listEmployees, isToggle, onToogleKey, onAddNew, onDeleteEmpl, on
                             </tr>
                           ))
                         }
-                      </tbody>
+                      </CSSTransitionGroup>
                     </Table>
                     <div className='wrapper-btn-add'>
-                      <button className='btn-add-new' onClick={onAddNew}>{`New`}</button>
+                      <button className='btn-add-new' disabled={isDisable} onClick={onAddNew}>{`New`}</button>
                     </div>
                   </div>
                 </div>
@@ -102,11 +110,13 @@ export default recompose(
   withState('isToggle', 'setIsToggle', false),
   withState('isShowContent', 'setIsShowContent', false),
   withState('textContent', 'setTextContent', ''),
+  withState('isDisable', 'setIsDisable', false),
   withHandlers({
     onToogleKey: (props) => () => {
       props.setIsToggle(true)
     },
     onAddNew: (props) => () => {
+      props.setIsDisable(true)
       props.onCreate()
     },
     onChangeName: (props) => (e) => {
@@ -127,6 +137,7 @@ export default recompose(
         },
         idx
       )
+      props.setIsDisable(false)
     },
     onShowContent: (props) => () => {
       props.setIsShowContent(true)

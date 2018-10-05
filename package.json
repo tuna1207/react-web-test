@@ -66,6 +66,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-transition-group": "1.x",
     "reactstrap": "^6.5.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
