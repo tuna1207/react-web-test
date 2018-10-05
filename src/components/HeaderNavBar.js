@@ -1,5 +1,6 @@
 import { Navbar, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import { compose as recompose, withHandlers, withState } from 'recompose'
+import avatar from '../assets/images/aa.jpg'
 import React from 'react'
 
 const HeaderNavBar = ({ isOpen, onShowDropdown }) => (
@@ -24,9 +25,7 @@ const HeaderNavBar = ({ isOpen, onShowDropdown }) => (
         <UncontrolledDropdown inNavbar nav>
           <DropdownToggle caret nav>
             <span>{`electricaio`}</span>
-            <div className='user-avatar'>
-              <span>{`Avatar`}</span>
-            </div>
+            <img className='avatar-image' src={avatar} />
           </DropdownToggle>
           <DropdownMenu right>
             <DropdownItem>
