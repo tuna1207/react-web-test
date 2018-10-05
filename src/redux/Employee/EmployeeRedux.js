@@ -8,8 +8,7 @@ const stateKey = 'employee'
 
 /* ------------- Initial State ------------- */
 const INITIAL_STATE = Immutable({
-  listEmployees: data,
-  redux_state_restored: false
+  listEmployees: data
 })
 
 /* ------------- Types and Action Creators ------------- */
