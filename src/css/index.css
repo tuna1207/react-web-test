@@ -138,7 +138,7 @@ table thead th , table tbody tr td {
   cursor: pointer
 }
 
-.btn-refresh:focus, .btn-delete:focus, .input-key:focus, .btn-sidebar:focus {
+.btn-refresh:focus, .btn-delete:focus, .input-key:focus, .btn-sidebar:focus, .btn-add-new :focus {
   outline: none
 }
 
@@ -159,13 +159,23 @@ table thead th , table tbody tr td {
   justify-content: center
 }
 
-.btn-add-new, .btn-save {
+.btn-save {
   border: none;
   color: #ffffff;
   padding: 5px 35px;
   cursor: pointer;
   border-radius: 3px;
   background:  #3998d7
+}
+
+.btn-add-new {
+  border: none;
+  color: #333333;
+  padding: 5px 35px;
+  cursor: pointer;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 1px solid #3998d7 
 }
 
 .input-new-text {
@@ -235,4 +245,31 @@ table thead th , table tbody tr td {
 
 .icon-sidebar {
   color: #999999
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
 }
