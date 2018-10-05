@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0
+}
+
+.header-page {
+  padding: 25px;
+  /* height: 80px; */
+  background: rgb(45, 152, 214)
+}
+
+.header-page > h3 {
+  color: white;
+}
+
+.container-fuild {
+  background-color: rgb(250, 251, 252);
+  padding: 0 15px;
+}
+
+table {
+
+}
+
+table thead th , table tbody tr td {
+  text-align: center
+}
+
+.btn-refresh {
+  background: #ffffff;
+  border: none;
+  color: #73c99d;
+  padding: 5px 15px;
+  cursor: pointer
+}
+
+.btn-delete {
+  background: #ffffff;
+  border: none;
+  color: #3998d7;
+  padding: 5px 15px;
+  cursor: pointer
+}
+
+.btn-refresh:focus, .btn-delete:focus, .input-key:focus {
+  outline: none
+}
+
+.input-key {
+  border: none;
+  text-align: center
+}
+
+.on-toggle {
+  font-size: 12px;
+  cursor: pointer;
+  color: green
+}
+
+.content-title {
+  background-color: white;  
+  margin-top: 60px;
+  margin-bottom: 60px;
+  /* border: 1px solid black; */
+  /* border-style: outset;÷
+   */
+   border: 1px solid rgb(0,0,0);
+   /* border: 1px solid rgba(255,0,0,0.5); */
+   -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+/* .content-title.outset {
+  border-style: outset;
+} */
+
+.wrapper-btn-add {
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+.btn-add-new, .btn-save {
+  border: none;
+  color: #ffffff;
+  padding: 5px 35px;
+  cursor: pointer;
+  border-radius: 3px;
+  background:  #3998d7
+}
+
+.input-new-text {
+  text-align: center;
+  font-size: 12px;
+}
