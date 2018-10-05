@@ -4,13 +4,75 @@ body {
 }
 
 .header-page {
-  padding: 25px;
-  /* height: 80px; */
   background: rgb(45, 152, 214)
 }
 
-.header-page > h3 {
+/* HEADER NAVBAR */
+
+.navbar {
+  padding: 0;
+  margin: 0
+}
+
+ .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+}
+
+.nav-item {
+  padding: 0 15px;
+  font-weight: 400;
+}
+
+.header-nav-bar .nav-item:last-child {
+  margin: 0 20px 0 50px;
+}
+
+.nav-item:last-child > a {
+  text-transform: unset !important;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:last-child > a > span {
+  text-decoration: underline;
+  font-weight: 400 !important;
+}
+
+.nav-item > a {
+  text-transform: uppercase;
+  color: #ffffff !important
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 0 15px;
+}
+
+.user-avatar > span {
+  color: #000000;
+  font-size: 10px;
+}
+
+.header-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between
+}
+
+.header-page > h6 {
   color: white;
+  margin: 0;
+  padding-left: 20px;
 }
 
 .container-fuild {
@@ -42,7 +104,7 @@ table thead th , table tbody tr td {
   cursor: pointer
 }
 
-.btn-refresh:focus, .btn-delete:focus, .input-key:focus {
+.btn-refresh:focus, .btn-delete:focus, .input-key:focus, .btn-sidebar:focus {
   outline: none
 }
 
@@ -92,4 +154,48 @@ table thead th , table tbody tr td {
 .input-new-text {
   text-align: center;
   font-size: 12px;
+}
+
+/* SIDEBAR */
+
+.sidebar-content {
+
+}
+
+.sidebar-content .navbar-nav {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  border-right: 1px solid #cccccc;
+  padding-left: 10px;
+}
+
+.sidebar-content > .navbar-nav .nav-item:nth-child(2){
+  margin: 0 !important;
+}
+
+.sidebar-content .nav-item {
+  text-align: left;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.sidebar-content .nav-item > a {
+  color: #666666 !important;
+}
+
+.show-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sidebar {
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #666666;
 }

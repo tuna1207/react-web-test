@@ -1,8 +1,10 @@
+import HeaderNavBar from './HeaderNavBar'
 import React from 'react'
 
 const Header = () => (
   <div className='header-page'>
-    <h3>{`electrica.io`}</h3>
+    <h6>{`electrica.io`}</h6>
+    <HeaderNavBar />
   </div>
 )
 
